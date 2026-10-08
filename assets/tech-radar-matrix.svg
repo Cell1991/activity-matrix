@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="radarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020712" />
+      <stop offset="100%" stop-color="#030c16" />
+    </linearGradient>
+
+    <linearGradient id="tierAdopt" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+
+    <linearGradient id="tierTrial" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+
+    <linearGradient id="tierAssess" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+
+    <linearGradient id="tierHold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#B91C1C" />
+    </linearGradient>
+
+    <pattern id="radarGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#13334a" opacity="0.5"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .font-h { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; }
+    .font-c { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+    .font-b { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 500; }
+  </style>
+
+  <rect width="1200" height="600" rx="16" fill="url(#radarBg)" stroke="#16394f" stroke-width="2" />
+  <rect width="1200" height="600" fill="url(#radarGrid)" />
+
+  <!-- HEADER -->
+  <g transform="translate(45, 38)">
+    <text x="0" y="0" fill="#10B981" class="font-c" font-size="12" font-weight="700" letter-spacing="2">03 // TAXONOMIC TECH RADAR</text>
+    <text x="0" y="24" fill="#FFFFFF" class="font-h" font-size="20">Telemetry Ecosystem &amp; Storage Architecture Matrix</text>
+    <text x="0" y="44" fill="#94A3B8" class="font-b" font-size="13">Strict engineering standards governing audit ingestion, serialization, and disk persistence</text>
+  </g>
+
+  <!-- ================= 4 TIERS ================= -->
+
+  <!-- TIER 1: ADOPT -->
+  <g transform="translate(45, 95)">
+    <rect width="1110" height="105" rx="10" fill="#051926" stroke="#16435f" stroke-width="1.2" />
+    <rect x="0" y="0" width="6" height="105" rx="3" fill="url(#tierAdopt)" />
+    
+    <text x="24" y="26" fill="#10B981" class="font-c" font-size="11" font-weight="800">TIER 01 // PROVEN STANDARDS</text>
+    <text x="24" y="48" fill="#FFFFFF" class="font-h" font-size="16">ADOPT (Core Operational Mandate)</text>
+    <text x="24" y="68" fill="#94A3B8" class="font-b" font-size="12">Direct I/O append cycles, OTel v1.32 specs, deterministic chronological sequence</text>
+
+    <!-- Badges Row -->
+    <g transform="translate(420, 30)">
+      <rect x="0" y="0" width="130" height="34" rx="6" fill="#04231b" stroke="#10b981" stroke-width="1.2" />
+      <text x="65" y="21" fill="#34D399" class="font-c" font-size="11" font-weight="700" text-anchor="middle">activity.log Sink</text>
+
+      <rect x="145" y="0" width="135" height="34" rx="6" fill="#082236" stroke="#06b6d4" stroke-width="1.2" />
+      <text x="212" y="21" fill="#00F2FE" class="font-c" font-size="11" font-weight="700" text-anchor="middle">Direct I/O WAL</text>
+
+      <rect x="295" y="0" width="145" height="34" rx="6" fill="#082236" stroke="#0284c7" stroke-width="1.2" />
+      <text x="367" y="21" fill="#38BDF8" class="font-c" font-size="11" font-weight="700" text-anchor="middle">Ring Buffer Arena</text>
+
+      <rect x="455" y="0" width="125" height="34" rx="6" fill="#082236" stroke="#3b82f6" stroke-width="1.2" />
+      <text x="517" y="21" fill="#93C5FD" class="font-c" font-size="11" font-weight="700" text-anchor="middle">Git Versioning</text>
+
+      <rect x="595" y="0" width="85" height="34" rx="6" fill="#082236" stroke="#10b981" stroke-width="1.2" />
+      <text x="637" y="21" fill="#6EE7B7" class="font-c" font-size="11" font-weight="700" text-anchor="middle">mTLS 1.3</text>
+    </g>
+  </g>
+
+  <!-- TIER 2: TRIAL -->
+  <g transform="translate(45, 215)">
+    <rect width="1110" height="105" rx="10" fill="#051926" stroke="#16435f" stroke-width="1.2" />
+    <rect x="0" y="0" width="6" height="105" rx="3" fill="url(#tierTrial)" />
+    
+    <text x="24" y="26" fill="#8B5CF6" class="font-c" font-size="11" font-weight="800">TIER 02 // ACCELERATION &amp; SCALE</text>
+    <text x="24" y="48" fill="#FFFFFF" class="font-h" font-size="16">TRIAL (Active High-Throughput Trials)</text>
+    <text x="24" y="68" fill="#94A3B8" class="font-b" font-size="12">Kernel eBPF state probes, multi-raft consensus streams, zstd stream compression</text>
+
+    <!-- Badges Row -->
+    <g transform="translate(420, 30)">
+      <rect x="0" y="0" width="130" height="34" rx="6" fill="#1b1238" stroke="#8b5cf6" stroke-width="1.2" />
+      <text x="65" y="21" fill="#C4B5FD" class="font-c" font-size="11" font-weight="700" text-anchor="middle">eBPF Tracing</text>
+
+      <rect x="145" y="0" width="150" height="34" rx="6" fill="#1b1238" stroke="#7c3aed" stroke-width="1.2" />
+      <text x="220" y="21" fill="#DDD6FE" class="font-c" font-size="11" font-weight="700" text-anchor="middle">Multi-Raft Consensus</text>
+
+      <rect x="310" y="0" width="140" height="34" rx="6" fill="#1b1238" stroke="#6366f1" stroke-width="1.2" />
+      <text x="380" y="21" fill="#A5B4FC" class="font-c" font-size="11" font-weight="700" text-anchor="middle">Zstd Compression</text>
+
+      <rect x="465" y="0" width="125" height="34" rx="6" fill="#1b1238" stroke="#8b5cf6" stroke-width="1.2" />
+      <text x="527" y="21" fill="#C4B5FD" class="font-c" font-size="11" font-weight="700" text-anchor="middle">AsyncIO Pool</text>
+    </g>
+  </g>
+
+  <!-- TIER 3: ASSESS -->
+  <g transform="translate(45, 335)">
+    <rect width="1110" height="105" rx="10" fill="#051926" stroke="#16435f" stroke-width="1.2" />
+    <rect x="0" y="0" width="6" height="105" rx="3" fill="url(#tierAssess)" />
+    
+    <text x="24" y="26" fill="#F59E0B" class="font-c" font-size="11" font-weight="800">TIER 03 // RESEARCH &amp; INNOVATION</text>
+    <text x="24" y="48" fill="#FFFFFF" class="font-h" font-size="16">ASSESS (Next-Generation Telemetry)</text>
+    <text x="24" y="68" fill="#94A3B8" class="font-b" font-size="12">Quantum-resistant cryptographic signatures, autonomous anomaly suppression AI</text>
+
+    <!-- Badges Row -->
+    <g transform="translate(420, 30)">
+      <rect x="0" y="0" width="170" height="34" rx="6" fill="#2d1d05" stroke="#f59e0b" stroke-width="1.2" />
+      <text x="85" y="21" fill="#FCD34D" class="font-c" font-size="11" font-weight="700" text-anchor="middle">Post-Quantum Hashes</text>
+
+      <rect x="185" y="0" width="180" height="34" rx="6" fill="#2d1d05" stroke="#d97706" stroke-width="1.2" />
+      <text x="90" y="21" fill="#FDE68A" class="font-c" font-size="11" font-weight="700" text-anchor="middle">AI Anomaly Suppression</text>
+
+      <rect x="380" y="0" width="165" height="34" rx="6" fill="#2d1d05" stroke="#f59e0b" stroke-width="1.2" />
+      <text x="82" y="21" fill="#FCD34D" class="font-c" font-size="11" font-weight="700" text-anchor="middle">Autonomous Mesh</text>
+    </g>
+  </g>
+
+  <!-- TIER 4: HOLD -->
+  <g transform="translate(45, 455)">
+    <rect width="1110" height="105" rx="10" fill="#051926" stroke="#16435f" stroke-width="1.2" />
+    <rect x="0" y="0" width="6" height="105" rx="3" fill="url(#tierHold)" />
+    
+    <text x="24" y="26" fill="#EF4444" class="font-c" font-size="11" font-weight="800">TIER 04 // DEPRECATED &amp; FORBIDDEN</text>
+    <text x="24" y="48" fill="#FFFFFF" class="font-h" font-size="16">HOLD (Strictly Prohibited in Production)</text>
+    <text x="24" y="68" fill="#94A3B8" class="font-b" font-size="12">Destructive in-place log truncations, unindexed raw JSON blobs, synchronous remote RPCs</text>
+
+    <!-- Badges Row -->
+    <g transform="translate(420, 30)">
+      <rect x="0" y="0" width="160" height="34" rx="6" fill="#290707" stroke="#ef4444" stroke-width="1.2" />
+      <text x="80" y="21" fill="#FCA5A5" class="font-c" font-size="11" font-weight="700" text-anchor="middle">In-Place Overwrites</text>
+
+      <rect x="175" y="0" width="150" height="34" rx="6" fill="#290707" stroke="#dc2626" stroke-width="1.2" />
+      <text x="75" y="21" fill="#FECACA" class="font-c" font-size="11" font-weight="700" text-anchor="middle">Blocking Sync RPC</text>
+
+      <rect x="340" y="0" width="170" height="34" rx="6" fill="#290707" stroke="#b91c1c" stroke-width="1.2" />
+      <text x="85" y="21" fill="#FCA5A5" class="font-c" font-size="11" font-weight="700" text-anchor="middle">Unversioned Records</text>
+    </g>
+  </g>
+</svg>

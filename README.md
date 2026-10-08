@@ -4,9 +4,9 @@
 
 <div align="center">
 
-  <!-- Responsive Animated High-Resolution Header Canvas -->
+  <!-- Responsive Animated High-Resolution Cyber-Titanium Hero Banner -->
   <a href="https://github.com/Cell1991/activity-matrix">
-    <img src="https://capsule-render.vercel.app/api?type=waving&color=030712,0ea5e9,10b981&height=220&section=header&text=Activity%20Telemetry%20Matrix&fontSize=42&fontColor=ffffff&fontAlignY=45&animation=fadeIn" width="100%" alt="Activity Telemetry Matrix Hero Banner" />
+    <img src="./assets/hero-banner.svg" alt="Activity Telemetry Matrix Hero Banner" width="100%" />
   </a>
 
   <br/><br/>
@@ -81,49 +81,14 @@
 <!-- ========================================================================================= -->
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=030712&height=46&text=01%20//%20DISTRIBUTED%20TOPOLOGY%20%26%20EVENT%20MESH%20ARCHITECTURE&fontSize=18&fontColor=00f2fe&fontAlignX=5&fontAlignY=65" width="100%" alt="01 // Distributed Topology & Event Mesh Architecture" id="01-distributed-topology--event-mesh-architecture" />
+  <img src="./assets/banner_01.svg" width="100%" alt="01 // Distributed Topology & Event Mesh Architecture" id="01-distributed-topology--event-mesh-architecture" />
+  <br/><br/>
+  <img src="./assets/telemetry-mesh-topology.svg" alt="Distributed Telemetry Mesh Topology Architecture" width="100%" />
 </div>
 
 <br/>
 
 The **Activity Telemetry Matrix** is structured around a decoupled four-stage ingestion fabric: edge multi-tenant telemetry collectors dispatch serialized binary state deltas into an ephemeral ring buffer, reconcile stream consistency via a distributed Raft consensus bus, and flush immutable records into the primary append-only log sink.
-
-```mermaid
-flowchart TD
-    subgraph Edge ["🌐 Edge Collection & Ingestion Layer"]
-        A1["Client Session Traces (gRPC)"] --> GW["Edge Ingress Gateway & Token Verifier"]
-        A2["Auth Middleware Events (mTLS)"] --> GW
-        A3["Kernel eBPF State Mutations"] --> GW
-        A4["Cron Heartbeat Deamons"] --> GW
-    end
-
-    subgraph Memory ["⚡ Zero-Copy Ring Buffer & Consensus Plane"]
-        GW --> Ring["L1 Ring Buffer Arena (64MB Cache-Aligned)"]
-        Ring --> Raft["Distributed Consensus Bus (Multi-Raft Stream)"]
-        Raft --> Batch["Micro-Batch Aggregator (Adaptive 50ms Flush)"]
-    end
-
-    subgraph Processing ["⚙️ Stream Normalization & State Reconciler"]
-        Batch --> Norm["Entity Relation Normalizer (3NF Ingestion)"]
-        Norm --> Dedup["Bloom Filter Event Deduplication"]
-        Dedup --> WalEngine["Write-Ahead Logging Engine (WAL)"]
-    end
-
-    subgraph Storage ["💾 High-Durability Immutable Persistence Sink"]
-        WalEngine --> Sync["Direct I/O Sequential Flush Controller"]
-        Sync --> PrimarySink[("📜 activity.log\n(Primary Append-Only Source of Truth)")]
-    end
-
-    classDef edge fill:#080e22,stroke:#00f2fe,stroke-width:1.5px,color:#ffffff;
-    classDef memory fill:#081b24,stroke:#06b6d4,stroke-width:1.5px,color:#ffffff;
-    classDef processing fill:#111827,stroke:#3b82f6,stroke-width:1.5px,color:#ffffff;
-    classDef storage fill:#06231a,stroke:#10b981,stroke-width:2px,color:#ffffff;
-
-    class A1,A2,A3,A4,GW edge;
-    class Ring,Raft,Batch memory;
-    class Norm,Dedup,WalEngine processing;
-    class Sync,PrimarySink storage;
-```
 
 <br/>
 
@@ -134,7 +99,9 @@ flowchart TD
 <!-- ========================================================================================= -->
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=030712&height=46&text=02%20//%20CORE%20ARCHITECTURAL%20PILLARS%20%26%20GUARANTEES&fontSize=18&fontColor=38bdf8&fontAlignX=5&fontAlignY=65" width="100%" alt="02 // Core Architectural Pillars & Guarantees" id="02-core-architectural-pillars--guarantees" />
+  <img src="./assets/banner_02.svg" width="100%" alt="02 // Core Architectural Pillars & Guarantees" id="02-core-architectural-pillars--guarantees" />
+  <br/><br/>
+  <img src="./assets/bento-matrix.svg" alt="Core Architectural Pillars Matrix" width="100%" />
 </div>
 
 <br/>
@@ -156,7 +123,9 @@ flowchart TD
 <!-- ========================================================================================= -->
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=030712&height=46&text=03%20//%20TAXONOMIC%20TECHNOLOGY%20RADAR%20%26%20STACK&fontSize=18&fontColor=10b981&fontAlignX=5&fontAlignY=65" width="100%" alt="03 // Taxonomic Technology Radar & Stack" id="03-taxonomic-technology-radar--telemetry-stack" />
+  <img src="./assets/banner_03.svg" width="100%" alt="03 // Taxonomic Technology Radar & Telemetry Stack" id="03-taxonomic-technology-radar--telemetry-stack" />
+  <br/><br/>
+  <img src="./assets/tech-radar-matrix.svg" alt="Taxonomic Technology Radar Matrix" width="100%" />
 </div>
 
 <br/>
@@ -177,19 +146,10 @@ flowchart TD
 <!-- ========================================================================================= -->
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=030712&height=46&text=04%20//%20INGESTION%20PIPELINE%20%26%20DATA%20STREAM%20LIFECYCLE&fontSize=18&fontColor=8b5cf6&fontAlignX=5&fontAlignY=65" width="100%" alt="04 // Ingestion Pipeline & Data Stream Lifecycle" id="04-ingestion-pipeline--data-stream-lifecycle" />
+  <img src="./assets/banner_04.svg" width="100%" alt="04 // Ingestion Pipeline & Data Stream Lifecycle" id="04-ingestion-pipeline--data-stream-lifecycle" />
+  <br/><br/>
+  <img src="./assets/pipeline-lifecycle.svg" alt="Ingestion Pipeline Lifecycle Matrix" width="100%" />
 </div>
-
-<br/>
-
-```
-[System Event] ──► [Ingress Gateway] ──► [Ring Buffer] ──► [WAL Controller] ──► [activity.log]
-      │                   │                    │                   │                  │
-      ▼                   ▼                    ▼                   ▼                  ▼
-01. DISPATCH       02. VALIDATE          03. ENQUEUE         04. SERIALIZE      05. PERSIST
-Emit mutation      Verify token          Stage in cache-     Convert into       Append atomic
-telemetry packet   mTLS signature        aligned memory      temporal string    record to file
-```
 
 <br/>
 
@@ -208,7 +168,7 @@ telemetry packet   mTLS signature        aligned memory      temporal string    
 <!-- ========================================================================================= -->
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=030712&height=46&text=05%20//%20EMPIRICAL%20BENCHMARKS%20%26%20TELEMETRY%20METRICS&fontSize=18&fontColor=f59e0b&fontAlignX=5&fontAlignY=65" width="100%" alt="05 // Empirical Benchmarks & Telemetry Metrics" id="05-empirical-benchmarks--telemetry-metrics" />
+  <img src="./assets/banner_05.svg" width="100%" alt="05 // Empirical Benchmarks & Telemetry Metrics" id="05-empirical-benchmarks--telemetry-metrics" />
 </div>
 
 <br/>
@@ -234,7 +194,7 @@ Benchmarked under simulated synthetic enterprise stress workloads across 1,000,0
 <!-- ========================================================================================= -->
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=030712&height=46&text=06%20//%20WAL%20PROTOCOL%20SPECIFICATION%20%26%20SCHEMA&fontSize=18&fontColor=ec4899&fontAlignX=5&fontAlignY=65" width="100%" alt="06 // WAL Protocol Specification & Schema" id="06-wal-protocol-specification--schema" />
+  <img src="./assets/banner_06.svg" width="100%" alt="06 // WAL Protocol Specification & Schema" id="06-wal-protocol-specification--schema" />
 </div>
 
 <br/>
@@ -263,7 +223,7 @@ All records captured inside `activity.log` adhere to the **ATM-V3 Semantic Stand
 <!-- ========================================================================================= -->
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=030712&height=46&text=07%20//%20MONOREPO%20LAYOUT%20%26%20CODE%20TREE&fontSize=18&fontColor=f97316&fontAlignX=5&fontAlignY=65" width="100%" alt="07 // Monorepo Layout & Code Tree" id="07-monorepo-layout--code-tree" />
+  <img src="./assets/banner_07.svg" width="100%" alt="07 // Monorepo Layout & Code Tree" id="07-monorepo-layout--code-tree" />
 </div>
 
 <br/>
@@ -271,12 +231,21 @@ All records captured inside `activity.log` adhere to the **ATM-V3 Semantic Stand
 ```bash
 activity-matrix/
 ├── .git/                      # Distributed state tracking & commit history
+├── assets/                    # High-resolution animated vector architecture diagrams
+│   ├── hero-banner.svg        # Cyber-titanium animated streaming hero banner
+│   ├── banner_01.svg .. 08    # High-contrast chapter navigation headers
+│   ├── telemetry-mesh-topology.svg  # Distributed mesh architecture & WAL data fabric
+│   ├── bento-matrix.svg       # 6-pillar capabilities bento grid
+│   ├── tech-radar-matrix.svg  # 4-tier technology radar classification
+│   ├── pipeline-lifecycle.svg # 5-stage ingestion stream lifecycle
+│   └── footer.svg             # Enterprise compendium sign-off canvas
 ├── README.md                  # Comprehensive enterprise architecture specification
 └── activity.log               # High-durability append-only primary audit telemetry sink
 ```
 
 * **`activity.log`**: The central persistence sink. Houses continuous temporal mutation records generated by automated pipeline daemons and cluster heartbeats.
 * **`README.md`**: The exhaustive architectural, operational, and benchmark specification guiding matrix operators.
+* **`assets/`**: Self-hosted vector graphics suite with CSS keyframe animation streams.
 
 <br/>
 
@@ -287,7 +256,7 @@ activity-matrix/
 <!-- ========================================================================================= -->
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=030712&height=46&text=08%20//%20PRODUCTION%20CLI%20SUITE%20%26%20VERIFICATION&fontSize=18&fontColor=ef4444&fontAlignX=5&fontAlignY=65" width="100%" alt="08 // Production CLI Suite & Verification" id="08-production-cli-suite--verification" />
+  <img src="./assets/banner_08.svg" width="100%" alt="08 // Production CLI Suite & Verification" id="08-production-cli-suite--verification" />
 </div>
 
 <br/>
@@ -316,10 +285,14 @@ $ matrix-ctl daemon start \
 
 ---
 
-<div align="center">
+<!-- ========================================================================================= -->
+<!--                                    COMPENDIUM FOOTER                                      -->
+<!-- ========================================================================================= -->
 
+<div align="center">
+  <img src="./assets/footer.svg" width="100%" alt="Activity Telemetry Matrix Footer" />
+  <br/><br/>
   <sub>Designed &amp; Maintained by <b><a href="https://github.com/Cell1991">Thanaphat Chichu (Cell1991)</a></b></sub>
   <br/>
   <sub>Enterprise Telemetry Infrastructure • High-Throughput Event Streaming • B.Sc. Computer Science</sub>
-
 </div>

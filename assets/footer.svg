@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" width="100%" height="100%">
+  <defs>
+    <linearGradient id="footBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#04121d" />
+      <stop offset="100%" stop-color="#020811" />
+    </linearGradient>
+    <linearGradient id="footLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="50%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+  </defs>
+  <style>
+    .mono { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+  </style>
+  <rect width="1200" height="150" rx="16" fill="url(#footBg)" stroke="#16394f" stroke-width="1.5" />
+  <rect x="0" y="0" width="1200" height="4" fill="url(#footLine)" />
+
+  <g transform="translate(600, 50)">
+    <text x="0" y="0" fill="#F8FAFC" class="sans" font-size="18" font-weight="900" text-anchor="middle">THE DEFINITIVE ACTIVITY TELEMETRY &amp; AUDIT MATRIX</text>
+    <text x="0" y="28" fill="#94A3B8" class="mono" font-size="13" font-weight="600" text-anchor="middle">Engineered for Distributed Systems Architects, High-Frequency Telemetry &amp; SRE Teams</text>
+    <text x="0" y="54" fill="#00F2FE" class="mono" font-size="12" font-weight="700" text-anchor="middle">Zero-Allocation Ingestion • Direct I/O WAL • activity.log Sink • 99.999% Durability SLA</text>
+  </g>
+</svg>
